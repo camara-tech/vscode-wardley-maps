@@ -3,5 +3,8 @@
 with pkgs;
 
 mkShell {
-  buildInputs = [ elmPackages.nodejs ];
+  buildInputs = [
+    elmPackages.nodejs
+    (yarn.override { nodejs = elmPackages.nodejs; })
+  ];
 }
